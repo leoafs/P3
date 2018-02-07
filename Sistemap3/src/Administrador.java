@@ -1,5 +1,6 @@
 
 public class Administrador {
+
 	private String[] usuario= new String[10];
 	private String[] identificacao = new String[10];
 	private String[] dataini= new String[10];
@@ -20,15 +21,14 @@ public class Administrador {
 	}
 	public void print() {
 		for(int i =0 ; i<10;i++) {
-		System.out.printf("Usuário %s\n"
-				+ "Solicitou %s\n"
-				+ "Data inicial:%s\n"
-				+ "Hora Inicial:%s\nData de termino:%s\nHora de termino:%s\nResponsavel%s\n",usuario[i],identificacao[i],
-				dataini[i],horaini[i],datafin[i],horafin[i],respon[i]
-				);
+		System.out.println("Usuário \n"
+				+ "Solicitou \n"
+				+ "Data inicial:\n"
+				+ "Hora Inicial:\nData de termino:\nHora de termino:\nResponsavel\n"+usuario[i]+identificacao[i]+
+				dataini[i]+horaini[i]+datafin[i]+horafin[i]+respon[i]);
 		}
-		
-		
+
+
 	}
 
 }
