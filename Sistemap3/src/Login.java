@@ -1,55 +1,43 @@
 
 public class Login {
 	
-	private String login;
-	private String password;
-	public String professor []= {"Juca","Pedro"};
-	public String Senhaprofessor []= {"12345","54321"};
-	public String pesquisador []= {"Jubileu"};
-	public String Senhapesquisador []= {"12435"};
-	public String aluno []= {"monstro","fera"};
-	public String Senhaaluno []= {"12345","54321"};
-	public String adm []= {"supremo"};
-	public String Senhaadm []= {"039615"};
+	private int login;
 	
-	public Login(String login, String password) {
+	
+	
+	public void login(int login) {
 		
 		this.login = login;
-		this.password = password;
+		
 	}
 	
 	String Verificando() {
 		
-		for(int i=0;i<professor.length;i++) {
-			
-			if(professor[i] == login && Senhaprofessor[i] == password) {
+			if(login== 1235) {
 				
 				return "professor";
 			}
-		}
 		
-		for(int i=0;i<pesquisador.length;i++) {
 			
-			if(pesquisador[i] == login && Senhapesquisador[i] == password) {
+			if(login ==1234) {
 				
 				return "Pesquisador";
 			}
-		}
 		
-		for(int i=0;i<aluno.length;i++) {
+		
+		
 			
-			if(aluno[i] == login && Senhaaluno[i] == password) {
+			if(login==1321) {
 				
 				return "Aluno";
-			}
-		}
-		for(int i=0;i<adm.length;i++) {
 			
-			if(adm[i] == login && Senhaadm[i] == password) {
+			}
+			
+			if(login==1312) {
 				
 				return "Administrador";
 			}
-		}
+		
 		
 		return "Acesso Negado";
 	

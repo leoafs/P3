@@ -8,17 +8,23 @@ public class Recurso {
 		private String horafin;
 		private String responsavel;
 		private String usuario;
-		public Recurso(String usuario) {
+		private String email;
+		private String descri;
+		
+		public void email(String email) {
+			this.email=email;
+		}
+		public void descri(String descri) {
+			this.descri=descri;
+		}
+		
+		public void user(String usuario) {
 			this.usuario = usuario;
+		
 		}
 
-		public String identific(String identificacao ){
-			this.identificacao = identificacao;
-			if((identificacao != "Apresentação" && (usuario == "Aluno" ||  usuario== "Pesquisador"))) {
-				System.out.println("Não autorizado");
-				return "Não";
-			}
-			else return "Sim";
+		public void identific(String identificacao ){
+			this.identificacao = identificacao;	
 			
 		}
 		
@@ -55,5 +61,40 @@ public class Recurso {
 			}
 			else return "Sim";
 		}
-
+		public String get_ident () {
+		
+			return this.identificacao;
+		}
+		public String get_dataini () {
+			
+			return this.dataini;
+		}
+		public String get_horaini () {
+			
+			return this.horaini;
+		}
+		public String get_datafin () {
+			
+			return this.datafin;
+		}
+		public String get_horafin () {
+			
+			return this.horafin;
+		}
+		public String get_respon () {
+			
+			return this.responsavel;
+		}
+		public String get_usuario () {
+			
+			return this.usuario;
+		}
+		public String get_email () {
+			
+			return this.email;
+		}
+		public String get_descri () {
+			
+			return this.descri;
+		}
 	}
