@@ -26,7 +26,6 @@ public class Sistema {
 		System.out.println("\nAdcionar funcionario - 1\nRemover funcionario - 2\nLista de funcionarios - 3");
 		comando = in.nextInt();
 		
-		
 		if (comando==1){
 			Empregado funcionario = new Empregado();
 			in.nextLine();
