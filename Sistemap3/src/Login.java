@@ -13,27 +13,24 @@ public class Login {
 	
 	String Verificando() {
 		
-			if(login== 1235) {
+			if(login== 12350) {
 				
 				return "professor";
 			}
 		
 			
-			if(login ==1234) {
+			if(login ==12341) {
 				
 				return "Pesquisador";
 			}
-		
-		
-		
 			
-			if(login==1321) {
+			if(login==13212) {
 				
 				return "Aluno";
 			
 			}
 			
-			if(login==1312) {
+			if(login==13123) {
 				
 				return "Administrador";
 			}
@@ -42,9 +39,4 @@ public class Login {
 		return "Acesso Negado";
 	
 	}
-	
-	
-	
-	
-	
 }

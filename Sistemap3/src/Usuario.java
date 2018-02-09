@@ -11,7 +11,7 @@ public class Usuario {
 	public int j=0;
 	
 	public void Armazenar(Recurso obj,int k) {
-		j=k;
+		j+=k;
 		this.usuario[j] = obj.get_usuario();
 		this.identificacao[j] = obj.get_ident();
 		this.dataini[j] = obj.get_dataini();
@@ -36,9 +36,9 @@ public class Usuario {
 	public void print() {
 		System.out.println();
 		for(int i =0 ; i<=j;i++) {
-		System.out.println("Solicitou:"+identificacao[i]+ "\nData inicial:"+dataini[i]+ 
+		System.out.println("Você Solicitou:"+identificacao[i]+ "\nData inicial:"+dataini[i]+ 
 				"\nHora Inicial:"+horaini[i]+ "\nData de termino:"+datafin[i]+ 
-				"\nHora de termino:"+horafin[i]+ "\nResponsavel:"+respon[i]);
+				"\nHora de termino:"+horafin[i]+ "\nResponsavel:"+respon[i]+"\n");
 				
 		}
 
