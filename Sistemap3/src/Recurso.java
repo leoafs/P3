@@ -26,6 +26,7 @@ public class Recurso {
 		public void identific(String identificacao ){
 			this.identificacao = identificacao;	
 			
+			
 		}
 		
 		public void dataDeInicio(String dataini){
@@ -52,14 +53,13 @@ public class Recurso {
 				
 		}
 		
-		public String resp(String responsavel){
+		public int resp(String responsavel,int idresponsavel){
 			
 			this.responsavel=responsavel;
-			if(responsavel=="Aluno") {
-				System.out.println("Não autorizado");
-				return "Não";
+			if(idresponsavel!=12350 && idresponsavel!=13123 &&  idresponsavel!=12341) {
+				return 1;
 			}
-			else return "Sim";
+			else return 0;
 		}
 		public String get_ident () {
 		

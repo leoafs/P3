@@ -17,6 +17,8 @@ public class SistemaP3 {
 		String datafin;
 		String horafin;
 		String responsavel;
+		int idresponsavel;
+		int res=0;
 		String email;
 		String descri;
 		String usuarios;
@@ -57,7 +59,6 @@ public class SistemaP3 {
 						if(continuar==3)user[(id%10)].print();
 						else {
 							Recurso recurso = new Recurso();
-							
 							in.nextLine();
 							System.out.println("Usuário:");
 							usuarios = in.nextLine();
@@ -77,13 +78,32 @@ public class SistemaP3 {
 							horafin=in.nextLine();
 							System.out.printf("Responsavel:");
 							responsavel=in.nextLine();
+							System.out.printf("Id do Responsavel:");
+							idresponsavel=in.nextInt();
 							
 							recurso.identific(identificacao);
 							recurso.dataDeInicio(dataini);
 							recurso.horaDeInicio(horaini);
 							recurso.datafinal(datafin);
 							recurso.horafinal(horafin);
-							recurso.resp(responsavel);
+							res=recurso.resp(responsavel,idresponsavel);
+							if(res==1) {
+							while(res==1) {
+								
+								System.out.println("Responsavel não autorizado. Deseja continuar?\n1-Sim\n2-Não");
+								continuar=in.nextInt();
+								
+								if(continuar==2)break;
+								System.out.printf("Responsavel:");
+								responsavel=in.nextLine();
+								idresponsavel=in.nextInt();
+								res=recurso.resp(responsavel,idresponsavel);
+								
+								
+								}
+							}
+							else {
+								
 							recurso.email(email);
 							recurso.user(usuarios);
 							recurso.descri(descri);
@@ -91,10 +111,10 @@ public class SistemaP3 {
 							System.out.println("Em processo de alocamento...\n\n");
 							admin.Armazenar(recurso, i);
 								user[id%10].Armazenar(recurso, w);
-								
+							
 							w=1;
 							i++;
-							
+							}
 							
 						}
 						

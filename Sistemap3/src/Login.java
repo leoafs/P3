@@ -2,9 +2,7 @@
 public class Login {
 	
 	private int login;
-	
-	
-	
+
 	public void login(int login) {
 		
 		this.login = login;
