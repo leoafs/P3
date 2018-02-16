@@ -8,29 +8,40 @@ public class Vendas {
 	
 	private double valor;
 	private int data;
-	public void lista(ArrayList lista,int id,String nome,double valor,int data) {
+	public void add (ArrayList lista,int id,String nome,double valor,int data) {
 		int a;
 		int aux;
 		int b;
+		int sexta2,sexta1,cont=0,menor;
+		
+		
 		Date data1=new Date();
 		Empregado func;
 		func=(Empregado) lista.get(id);
-		a=data1.getDate();
+		Calendar calendar = Calendar.getInstance();
+		data1.getDate();
+		
+		a=calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
 		data1.setDate(a);
-		aux=data1.getDay();
-		for(int i =0; i<6;i++){
-			if(aux==5){
-				b=i+a;
-				break;
-			}
-			
+		if(data1.getDay()==5) {
+			sexta1=a+7;
+			sexta2=a+21;
 		}
-		if(func.getTipo().equals("Comissionados")){
-			
-				if(a!=a+7 || a!=a+21){
-					func.setsalariofin(func.getSalario()+(10/100)*valor);
-				}
+		else if(data1.getDay()==6) {
+			sexta1=a+6;
+			sexta2=a+20;
 		}
+		else  {
+			sexta1=(5-data1.getDay())+a+7;
+			sexta2=(5-data1.getDay())+a+21;
+		}
+		if(data<sexta1 || data>sexta2) {
+			func.setSalario1(valor);
+		}
+		else if(data<sexta2 && data>sexta1) {
+			func.setSalario2(valor);
+		}
+		
 		
 		
 		

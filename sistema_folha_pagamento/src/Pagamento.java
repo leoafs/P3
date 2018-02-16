@@ -31,7 +31,7 @@ public class Pagamento {
 					if(d==a || d==day){
 					System.out.println(func.getNome()+"\nID:"+func.getid());
 						if(func.getSind().equals("Sim")){
-							System.out.println(("Salario"+(func.getSalario()+15)));
+							System.out.println(("Salario = "+(func.getSalario()+15)));
 							System.out.println("Valor do Sindicato - 15R$");
 							System.out.println("Salario = "+func.getSalario());
 						}
@@ -54,14 +54,93 @@ public class Pagamento {
 				}
 			}
 			else if(func.getTipo().equals("Horista")){
-				
-					if(aux==5 ) {
-					System.out.println("Valor"+func.getsalariofin());
+					
+					if(aux==5 || day==a+(5-aux) ) {
+						if(func.getSind().equals("Sim")){
+							System.out.println(("Salario = "+(func.getSalario()+15)));
+							System.out.println("Valor do Sindicato - 15R$");
+							System.out.println("Salario = "+func.getSalario());
+						}
+						else{
+							System.out.println("Salario = "+func.getSalario());
+						}
+					}
+						if(aux==5)
 						func.setzero();
 					}
-					aux++;
+			else if(func.getTipo().equals("Comissionado")) {
+				int z;
+				
+				int b;
+				int sexta2,sexta1,cont=0,menor;
+				
+				
+				Date data1=new Date();
+				
+				
+				Calendar calendar = Calendar.getInstance();
+				data1.getDate();
+				
+				z=calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
+				data1.setDate(z);
+				if(data1.getDay()==5) {
+					sexta1=z+7;
+					sexta2=z+21;
+				}
+				else if(data1.getDay()==6) {
+					sexta1=z+6;
+					sexta2=z+20;
+				}
+				else  {
+					sexta1=(5-data1.getDay())+z+7;
+					sexta2=(5-data1.getDay())+z+21;
+				}
+				if(a==sexta1 || day==sexta1 ) {
+					if(func.getSind().equals("Sim")){
+						if(func.getSalario1()+15!=0) {
+							System.out.println(("Salario = "+(func.getSalario1()+15)));
+							System.out.println("Valor do Sindicato - 15R$");
+							System.out.println("Salario = "+func.getSalario1());
+						}
+						else {
+							System.out.println(("Salario = "+(func.getSalario()+15)));
+							System.out.println("Valor do Sindicato - 15R$");
+							System.out.println("Salario = "+func.getSalario()/2);
+						}
+					}
+					
+					else{
+						if(func.getSalario1()!=0)
+						System.out.println("Salario = "+func.getSalario1());
+						else System.out.println("Salario = "+func.getSalario()/2);
+					}
+					if(a==sexta2)func.setSalario22(0);
+				}
+				if(a==sexta2 || day==sexta2 ) {
+					if(func.getSind().equals("Sim")){
+						if(func.getSalario2()+15!=0) {
+						System.out.println(("Salario = "+(func.getSalario2()+15)));
+						System.out.println("Valor do Sindicato - 15R$");
+						System.out.println("Salario = "+func.getSalario2());
+						}
+						else {
+							System.out.println(("Salario = "+(func.getSalario()+15)));
+							System.out.println("Valor do Sindicato - 15R$");
+							System.out.println("Salario = "+func.getSalario()/2);
+							
+						}
+					}
+					
+					else{
+						if(func.getSalario2()!=0)System.out.println("Salario = "+func.getSalario2());
+						else System.out.println("Salario = "+func.getSalario()/2);
+					}
+					if(a==sexta2)func.setSalario22(0);
+				}
+				
+			}
 				}
 				
 			}
 		}
-}
+
