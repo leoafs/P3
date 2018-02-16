@@ -8,11 +8,9 @@ public class Cartao {
 		aux = (Empregado) lista.get(id);
 		if(nome.equals(aux.getNome())) {
 			if(situ.equals("Entrada")) {
-				System.out.println("OIIIIIII");
 				aux.setHoraini(hora);
 			}
 			else {
-				System.out.println("aaaa");
 				aux.setHorafin(hora);
 				aux.setsalariofin(aux.getSalario()*aux.fatorH());
 
