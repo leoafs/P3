@@ -6,7 +6,7 @@ public class Pagamento {
 	Calendar calendar = Calendar.getInstance();
 	Calendar c = Calendar.getInstance();
 	Date data=new Date();
-	public Pagamento(ArrayList lista){
+	public Pagamento(ArrayList lista,int day){
 		int d;
 		int a;
 		int aux;
@@ -28,19 +28,26 @@ public class Pagamento {
 
 				aux3=aux;
 				if(aux2!=0 && aux2!=6) {
-					if(d==aux3){
+					if(d==a || d==day){
 					System.out.println(func.getNome()+"\nID:"+func.getid());
-					System.out.println(func.getSalario() + "R$\ndia "+d );
+						if(func.getSind().equals("Sim")){
+							System.out.println(("Salario"+(func.getSalario()+15)));
+							System.out.println("Valor do Sindicato - 15R$");
+							System.out.println("Salario = "+func.getSalario());
+						}
+						else{
+							System.out.println("Salario = "+func.getSalario());
+						}
 					}
 				}
 				else if(aux2==0) {
-					if((d-2==aux3)){
+					if((d-2==aux3 || aux3==day)){
 					System.out.println(func.getSalario() + "R$\ndia "+(d-2));
 					System.out.println(func.getNome()+"\nID:"+func.getid());
 					}
 				}
 				else if(aux2==6) {
-					if((d-1)==aux3){
+					if((d-1)==aux3 || aux3==day){
 					System.out.println(func.getNome()+"\nID:"+func.getid());
 					System.out.println(func.getSalario() + "R$\ndia "+(d-1));
 					}
@@ -48,10 +55,9 @@ public class Pagamento {
 			}
 			else if(func.getTipo().equals("Horista")){
 				
-					if(aux==5) {
+					if(aux==5 ) {
 					System.out.println("Valor"+func.getsalariofin());
 						func.setzero();
-						break;
 					}
 					aux++;
 				}

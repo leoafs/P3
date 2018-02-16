@@ -9,6 +9,7 @@ public class Empregado {
 	private int horaini;
 	private int horafin;
 	private double salariofin;
+	private String forma;
 	
 	public void dados(String nome,String endereco,String tipo,double salario,int id,String sindi)
 	{
@@ -36,6 +37,12 @@ public class Empregado {
 	}
 	public String getSind(){
 		return sindi;
+	}
+	public String getForma(){
+		return this.forma;
+	}
+	public String get(){
+		return forma;
 	}
 	public void setHoraini(int horas) {
 		this.horaini=horas;

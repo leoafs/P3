@@ -15,10 +15,12 @@
 		String endereco;
 		String tipo;
 		double salario;
+		String forma;
 		String resposta;
 		int a=1;
 		int k=0;
 		int j;
+		int day;
 		
 		Scanner in = new Scanner(System.in);
 		
@@ -38,6 +40,8 @@
 			tipo = in.nextLine();
 			System.out.printf("\nSalario: ");
 			salario = in.nextDouble();
+			System.out.printf("\nForma de Pagamento(Cheque pelos Correios,Conta Bancaria,Cheque em mãos):");
+			forma = in.nextLine();
 			in.nextLine();
 			System.out.println(" ");
 			
@@ -45,7 +49,7 @@
 			resposta = in.nextLine();
 			if(resposta.equals("s")) {
 				Sindicato membro = new Sindicato();
-				funcionario.dados(nome, endereco, tipo, salario,k,"Sim");
+				funcionario.dados(nome, endereco, tipo, salario-15,k,"Sim");
 				membro.membro(nome, endereco, tipo, salario, k+1);
 				lista2.add(membro);
 			}
@@ -64,13 +68,13 @@
 			System.out.println("Empregados");
 			for(int i=0;i<lista.size();i++){
 				Empregado aux=lista.get(i);
-				System.out.printf("Id do usuário: "+ aux.getid());
+				System.out.printf("\nId do usuário: %s",aux.getid());
 				System.out.printf("\nNome: %s",aux.getNome());
 				System.out.printf("\nEndereço: %s",aux.getEndereco());
 				System.out.printf("\nTipo de trabalho: %s",aux.getTipo());
-				System.out.printf("\nSalario: %lf",aux.getSalario()+"R$");
+				System.out.printf("\nSalario: "+aux.getSalario()+"R$");
+				System.out.printf("\nForma de Pagammento: " + aux.get());
 				System.out.printf("\nPertence ao sindicato?: %s ",aux.getSind());
-				System.out.println(" ");
 			}
 	   }
 		else if(comando==4) {
@@ -85,7 +89,9 @@
 			}
 		}
 		else if(comando==5) {
-			Pagamento pag= new Pagamento(lista);
+			System.out.println("Digite 0 para o dia Atual ou digite uma dia expecifico:");
+			day=in.nextInt();
+			Pagamento pag= new Pagamento(lista,day);
 
 		}
 		else if(comando==6) {
