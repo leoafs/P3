@@ -97,7 +97,7 @@ public class Pagamento {
 				}
 				if(a==sexta1 || day==sexta1 ) {
 					if(func.getSind().equals("Sim")){
-						if(func.getSalario1()+15!=0) {
+						if(func.getSalario1()!=0) {
 							System.out.println(("Salario = "+(func.getSalario1()+15)));
 							System.out.println("Valor do Sindicato - 15R$");
 							System.out.println("Salario = "+func.getSalario1());
@@ -118,7 +118,7 @@ public class Pagamento {
 				}
 				if(a==sexta2 || day==sexta2 ) {
 					if(func.getSind().equals("Sim")){
-						if(func.getSalario2()+15!=0) {
+						if(func.getSalario2()!=0) {
 						System.out.println(("Salario = "+(func.getSalario2()+15)));
 						System.out.println("Valor do Sindicato - 15R$");
 						System.out.println("Salario = "+func.getSalario2());

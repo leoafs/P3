@@ -28,7 +28,7 @@
 		Scanner in = new Scanner(System.in);
 		
 		while(a==1){
-			System.out.println("\nAdcionar funcionario - 1\nRemover funcionario - 2\nLista de funcionarios - 3\nListar Membros do Sindicato - 4\nFolha de Pagamento-5\nPonto - 6\nAdicionar - 7" );
+			System.out.println("\nAdcionar funcionario - 1\nRemover funcionario - 2\nLista de funcionarios - 3\nListar Membros do Sindicato - 4\nFolha de Pagamento-5\nPonto - 6\nAdicionar Venda- 7" );
 			comando = in.nextInt();
 		
 			if (comando==1){
