@@ -27,7 +27,7 @@ public class Main {
 			}
 			else{
 				CriarConta cadastro= new CriarConta();
-				cadastro.perfil(opcao);
+				cadastro.perfil();
 				novo.addMembro(cadastro);
 			}
 			

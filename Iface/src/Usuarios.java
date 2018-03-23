@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 public class Usuarios {
-	CriarConta lista;
+	CriarConta lista_de_contas;
 	public ArrayList <CriarConta> contas= new ArrayList<CriarConta>();
 	
 	public void addMembro(CriarConta conta){
@@ -12,8 +12,8 @@ public class Usuarios {
 	
 	public void listar(){
 			for(int i=0;i<contas.size();i++){
-			lista=contas.get(i);
-			System.out.println(lista.getLogin());
+			lista_de_contas=contas.get(i);
+			System.out.println(lista_de_contas.getLogin());
 		}
 	}
 	
