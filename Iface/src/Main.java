@@ -13,7 +13,7 @@ public class Main {
 		Usuarios novo = new Usuarios();
 		
 		while(true){
-			System.out.println("1-Login\n2-Cadastro\n3 Listar(teste)");
+			System.out.println("1-Login\n2-Cadastro");
 			opcao=in.nextInt();
 			
 			if(opcao==1){
