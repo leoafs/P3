@@ -24,7 +24,12 @@ public class CriarConta {
 		System.out.println("Password:");
 		this.password = in.nextLine();
 	}
-	
+	public String getLogin(){
+		return this.login;
+	}
+	public String getPassword(){
+		return this.password;
+	}
 	
 	
 
