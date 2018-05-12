@@ -3,10 +3,11 @@ package com.Kickstarter.main;
 import java.util.Scanner;
 
 public class CriarConta {
-	private String login;
-	private String password;
-	private String firstname;
-	private String lastname;
+	protected String login;
+	protected String password;
+	protected String firstname;
+	protected String lastname;
+	protected int identifier=0;
 	//private String birthday;
 	
 	public void setAttributes(){
@@ -29,6 +30,9 @@ public class CriarConta {
 	}
 	public String getPassword(){
 		return this.password;
+	}
+	public int getIdentfier() {
+		return this.identifier;
 	}
 	
 	

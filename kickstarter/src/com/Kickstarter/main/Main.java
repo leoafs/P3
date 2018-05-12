@@ -13,7 +13,9 @@ public class Main {
 		Projects project = new Projects();
 		String log;
 		String password;
-		
+		Admin adm = new Admin();
+		adm.setAttributes();
+		user.setUser(adm);
 		while(true){
 			try{
 					System.out.println("1-Explorar Projetos\n2-Login\n3-Criar Conta");
@@ -42,6 +44,7 @@ public class Main {
 							
 						}
 						break;
+						
 						
 					default:
 						System.out.println("Opção Invalida");
