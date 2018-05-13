@@ -9,6 +9,7 @@ public class Login {
 	private String password;
 	private int option;
 	private int option2;
+	private int cont = 0;
 	Scanner in = new Scanner(System.in);
 	private Projects projects;
 	
@@ -25,6 +26,7 @@ public class Login {
 			CriarConta aux = (CriarConta) user.getAccount().get(i);
 			
 				if(login.equals(aux.getLogin()) && password.equals(aux.getPassword())){
+					cont++;
 					if(aux.getIdentfier()==0) {
 						while(control){
 							try{
@@ -71,10 +73,12 @@ public class Login {
 									for (int j=0; j<auxx.size();j++){
 										CriarProjeto a = (CriarProjeto) auxx.get(j);
 										System.out.println((j+1)+":"+a.getDescription());
+										System.out.println(a.getStatus());
 										System.out.println("Aprovar 1-SIN/2N�O");
 										option2=in.nextInt();
 										if(option2==1) {
 											projects.setProjecs(a);
+											a.setStatusApproved();
 										}
 				
 									}
@@ -86,12 +90,11 @@ public class Login {
 									
 									//projects.setProject(project);
 									break;
-								case 3:
-									
 								case 4:
 									control = false;
-									break;
+								
 								}
+								
 							}catch(InputMismatchException e){
 								System.out.println("Entrada Invalida");
 								break;
@@ -101,7 +104,8 @@ public class Login {
 					}
 			}
 		}
-		 System.out.println("Login ou Senha não correspondem");
+		
+		if(cont==0) System.out.println("Login ou Senha não correspondem");
 
 	}
 }
