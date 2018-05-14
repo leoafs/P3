@@ -30,7 +30,7 @@ public class Login {
 					if(aux.getIdentfier()==0) {
 						while(control){
 							try{
-								System.out.println("1-Explorar Projetos\n2-Criar Projeto\n3-Exit");
+								System.out.println("1-Explorar Projetos\n2-Criar Projeto\n3-Seus Projetos\n4-Exit");
 								option = in.nextInt();
 								switch(option){
 								case 1 :
@@ -48,10 +48,21 @@ public class Login {
 									option2= project.getOption();
 									if(option2==1) {
 										projects.setProjectwaiting(project);
+									
 									}
+									aux.setProjects(project);
 									//projects.setProject(project);
 									break;
 								case 3:
+									ArrayList  aux2 = aux.getProjects();
+									for (int j=0; j<aux2.size();j++){
+										CriarProjeto a = (CriarProjeto) aux2.get(j);
+										System.out.println((j+1)+":"+a.getDescription());
+										System.out.println("Status:"+a.getStatus());
+									}
+									break;
+									
+								case 4:
 									control = false;
 									break;
 								}
@@ -65,13 +76,13 @@ public class Login {
 					else if(aux.getIdentfier()==1) {
 						while(control){
 							try{
-								System.out.println("1-Explorar Projetos Pendentes\n2-Criar Projeto\n3-Avaliar Projeto\n4-Exit");
+								System.out.println("1-Explorar Projetos Pendentes\n2-Listar Projetos\n3-Contribuir\n4-Exit");
 								option = in.nextInt();
 								switch(option){
 								case 1 :
-									ArrayList  auxx = projects.getProjectsWaiting();
-									for (int j=0; j<auxx.size();j++){
-										CriarProjeto a = (CriarProjeto) auxx.get(j);
+									ArrayList  aux3 = projects.getProjectsWaiting();
+									for (int j=0; j<aux3.size();j++){
+										CriarProjeto a = (CriarProjeto) aux3.get(j);
 										System.out.println((j+1)+":"+a.getDescription());
 										System.out.println(a.getStatus());
 										System.out.println("Aprovar 1-SIN/2NÃO");
@@ -79,17 +90,20 @@ public class Login {
 										if(option2==1) {
 											projects.setProjecs(a);
 											a.setStatusApproved();
+											projects.removeProject(j);
+											
 										}
 				
 									}
 									break;
 								case 2:
-									CriarProjeto project = new CriarProjeto();
-									project.setAttributes();
-									System.out.println("Enviar Projeto?: 1-Sim/2-Não");
-									
-									//projects.setProject(project);
-									break;
+									ArrayList  aux4 = projects.getProjects();
+									for (int j=0; j<aux4.size();j++){
+										CriarProjeto a = (CriarProjeto) aux4.get(j);
+										System.out.println((j+1)+":"+a.getDescription());
+				
+									}
+									break;									
 								case 4:
 									control = false;
 								

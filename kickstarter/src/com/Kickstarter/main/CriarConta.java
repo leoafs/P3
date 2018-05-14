@@ -1,5 +1,6 @@
 package com.Kickstarter.main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CriarConta {
@@ -8,6 +9,7 @@ public class CriarConta {
 	protected String firstname;
 	protected String lastname;
 	protected int identifier=0;
+	private ArrayList <CriarProjeto> projects = new ArrayList();
 	//private String birthday;
 	
 	public void setAttributes(){
@@ -33,6 +35,14 @@ public class CriarConta {
 	}
 	public int getIdentfier() {
 		return this.identifier;
+	}
+	public void setProjects(CriarProjeto projects) {
+		this.projects.add(projects);
+		
+	}
+	public ArrayList getProjects(){
+		return this.projects;
+		
 	}
 	
 	

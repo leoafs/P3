@@ -21,4 +21,7 @@ public class Projects {
 		return this.projectswaiting;
 		
 	}
+	public void removeProject(int index) {
+		this.projectswaiting.remove(index);
+	}
 }
